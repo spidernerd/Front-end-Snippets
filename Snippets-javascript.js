@@ -1,28 +1,13 @@
-jQuery(document).ready(function ($) {
-	
-// Snippets function ------------------------------------
-	
+// Image FullScreen ----------------------------------------------------------------------------
 
- // AddClass Function
-function image_full_screen(target, autoload) {
+function slider_fullScreen(id) {
+	// sistema de indentificação da tela.
 	'use strict';
+	var element  = document.getElementById(id),
+		width    = window.innerWidth,
+		height   = window.innerHeight;
 	
-	if (autoload === true) {
-		var height = $(window).height(),
-			width  = $(window).width();
-		// codigo
-		$(window).on('resize load', function () {
-			height = $(window).height(),
-			width  = $(window).width();
+	element.setAttribute('style', 'width:' + width + 'px; height:' + height + 'px;');
+	element.setAttribute('name', 'size the window: ' + width + 'x' + height);
 
-			$(target).css({
-				'width': width + 'px',
-				'height': height + 'px'
-			});
-		});
-		
-	}
 }
-image_full_screen('.target', true);
-
-});
